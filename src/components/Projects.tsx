@@ -1,106 +1,113 @@
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
     id: '01',
-    title: 'Stories De Café',
-    category: 'Restaurant Website',
+    title: 'Stories De Cafe',
+    category: 'Brand Website',
     tech: 'Next.js, Tailwind CSS',
-    features: 'Mobile-first design • Fast loading • SEO optimized • Modern UI',
-    image: 'https://picsum.photos/seed/cafe/800/600?grayscale',
+    highlights: ['Mobile-first', 'Fast loading', 'SEO structure'],
+    image: 'https://picsum.photos/seed/cafe/1200/900?grayscale',
   },
   {
     id: '02',
     title: 'QR Menu System',
-    category: 'Web Application',
+    category: 'SaaS Workflow',
     tech: 'React, Node.js',
-    features: 'Digital menu • Real-time kitchen dashboard • Order tracking • Admin analytics',
-    image: 'https://picsum.photos/seed/menu/800/600?grayscale',
+    highlights: ['Live order updates', 'Kitchen dashboard', 'Ops analytics'],
+    image: 'https://picsum.photos/seed/menu/1200/900?grayscale',
   },
   {
     id: '03',
-    title: 'Swiggy Expense Tracker',
+    title: 'Expense Insights Extension',
     category: 'Chrome Extension',
     tech: 'JavaScript, Chrome APIs',
-    features: 'Spending dashboard • Order analytics • Food item insights • Visualization charts',
-    image: 'https://picsum.photos/seed/dashboard/800/600?grayscale',
+    highlights: ['Spending trends', 'Category split', 'Visual reporting'],
+    image: 'https://picsum.photos/seed/dashboard/1200/900?grayscale',
   },
   {
     id: '04',
-    title: 'Restaurant Template',
-    category: 'Website Template',
+    title: 'Restaurant Web Template',
+    category: 'Template System',
     tech: 'Next.js, Tailwind CSS',
-    features: 'Menu display • Contact & location • Photo gallery • SEO optimized',
-    image: 'https://picsum.photos/seed/template/800/600?grayscale',
+    highlights: ['Reusable blocks', 'Menu modules', 'Launch-ready SEO'],
+    image: 'https://picsum.photos/seed/template/1200/900?grayscale',
   },
 ];
 
-export default function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+const cardSpans = ['md:col-span-7', 'md:col-span-5', 'md:col-span-5', 'md:col-span-7'];
 
+export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-ink text-paper relative">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-end justify-between mb-16 md:mb-24">
+    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-ink text-paper relative overflow-hidden">
+      <div className="absolute -top-40 -left-20 w-[35rem] h-[35rem] rounded-full bg-paper/5 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-52 -right-20 w-[40rem] h-[40rem] rounded-full bg-paper/5 blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-14 md:mb-20"
+        >
           <h2 className="text-4xl md:text-6xl font-serif tracking-tight">
             Selected <span className="italic text-paper/70">Works</span>
           </h2>
-        </div>
+          <p className="mt-4 text-paper/70 text-sm md:text-base max-w-2xl">
+            A curated mix of websites, SaaS experiences, and product interfaces built for speed, clarity, and growth.
+          </p>
+        </motion.div>
 
-        <div className="flex flex-col border-t border-paper/20 relative">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={project.id}
-              className="group relative border-b border-paper/20 py-8 md:py-12 flex flex-col md:flex-row md:items-center justify-between hover-target cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, margin: '-120px' }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
+              className={`${cardSpans[index]} group relative min-h-[24rem] md:min-h-[26rem] rounded-2xl overflow-hidden border border-paper/20 hover:border-paper/40 transition-colors duration-300`}
             >
-              {/* Background hover effect */}
-              <div className="absolute inset-0 bg-paper/5 scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-out -z-10" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 h-full w-full object-cover grayscale group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
+                referrerPolicy="no-referrer"
+              />
 
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-16 z-10 w-full md:w-auto">
-                <div className="flex items-center gap-8 md:gap-16">
-                  <span className="font-mono text-sm text-paper/50">{project.id}</span>
-                  <h3 className="text-3xl md:text-5xl font-sans font-medium tracking-tight group-hover:translate-x-4 transition-transform duration-500">
+              <div className="absolute inset-0 bg-gradient-to-b from-ink/15 via-ink/40 to-ink/95" />
+
+              <div className="relative z-10 h-full flex flex-col justify-between p-6 md:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono text-[11px] md:text-xs tracking-widest uppercase text-paper/65">
+                    {project.id} • {project.category}
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-[11px] md:text-xs font-mono uppercase tracking-widest text-paper/80 border border-paper/30 rounded-full px-3 py-1">
+                    Explore
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+
+                <div>
+                  <p className="font-mono text-[11px] md:text-xs text-paper/60 mb-3">{project.tech}</p>
+                  <h3 className="text-2xl md:text-4xl font-sans font-semibold tracking-tight leading-tight">
                     {project.title}
                   </h3>
-                </div>
-                <div className="ml-14 md:ml-0 flex flex-col gap-1 md:hidden group-hover:opacity-100 opacity-70 transition-opacity">
-                  <span className="font-mono text-xs text-paper/50">{project.tech}</span>
-                  <span className="text-sm font-light text-paper/80">{project.features}</span>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.highlights.map((item) => (
+                      <span
+                        key={item}
+                        className="text-[11px] md:text-xs font-mono uppercase tracking-wider text-paper/80 bg-paper/10 border border-paper/20 rounded-full px-3 py-1"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-              
-              <div className="hidden md:flex flex-col items-end gap-2 z-10 text-right">
-                <span className="font-mono text-xs uppercase tracking-widest opacity-60">{project.category}</span>
-                <span className="font-mono text-xs text-paper/50">{project.tech}</span>
-                <span className="text-sm font-light text-paper/80 max-w-xs">{project.features}</span>
-              </div>
-
-              {/* Floating Image Reveal on Desktop */}
-              <motion.div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] pointer-events-none hidden lg:block z-20 overflow-hidden rounded-lg"
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                animate={{ 
-                  opacity: hoveredIndex === index ? 1 : 0,
-                  scale: hoveredIndex === index ? 1 : 0.8,
-                  rotate: hoveredIndex === index ? 0 : -5
-                }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-              >
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </motion.div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

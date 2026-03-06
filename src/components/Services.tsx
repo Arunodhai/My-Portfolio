@@ -3,32 +3,32 @@ import { motion } from 'motion/react';
 const services = [
   {
     id: '01',
-    title: 'Restaurant Websites',
-    description: 'Modern, fast, and visually appealing websites for cafés, restaurants, and food businesses to showcase menus and ambience.'
+    title: 'Business Websites',
+    description: 'High-converting websites for brands, startups, agencies, and local businesses with clear messaging and polished design.'
   },
   {
     id: '02',
-    title: 'SaaS Dashboards',
-    description: 'Clean, practical, and data-driven web applications and dashboards with a focus on UI/UX and performance.'
+    title: 'SaaS Applications',
+    description: 'End-to-end SaaS interfaces including onboarding, product dashboards, account flows, and admin experiences.'
   },
   {
     id: '03',
-    title: 'Data Visualization',
-    description: 'Transforming complex data into easy-to-understand visual charts, insights, and interactive tools.'
+    title: 'Dashboards & Data Visualization',
+    description: 'Interactive reporting views that transform complex product and business data into actionable insights.'
   },
   {
     id: '04',
-    title: 'Ordering Systems',
-    description: 'Digital QR menus, real-time kitchen dashboards, and order tracking systems tailored for modern dining.'
+    title: 'Custom Web Systems',
+    description: 'Tailored web workflows such as booking platforms, internal tools, portals, and automation-oriented systems.'
   }
 ];
 
 const processSteps = [
-  "Understand the business",
-  "Design the interface",
-  "Develop the website",
-  "Optimize performance",
-  "Deploy and launch"
+  "Discover goals and users",
+  "Design clear user flows",
+  "Build and iterate fast",
+  "Optimize speed and SEO",
+  "Launch with confidence"
 ];
 
 export default function Services() {
@@ -46,7 +46,7 @@ export default function Services() {
             My <span className="italic text-ink/70">Specialization</span>
           </h2>
           <p className="text-xl font-light text-ink/80 max-w-2xl">
-            I specialize in building websites and digital solutions for cafés and restaurants, helping food businesses go online with modern websites and ordering systems.
+            I help teams build websites and SaaS products across industries, with a strong focus on performance, usability, and measurable business impact.
           </p>
         </motion.div>
 

@@ -11,18 +11,9 @@
 @layer base {
   body {
     @apply bg-paper text-ink font-sans antialiased selection:bg-ink selection:text-paper;
-    /* Hide default cursor on desktop to use custom cursor */
-    @media (pointer: fine) {
-      cursor: none;
-    }
   }
 
-  /* Ensure interactive elements hide cursor too if we want custom cursor everywhere */
-  @media (pointer: fine) {
-    a, button, input, textarea, select {
-      cursor: none;
-    }
-  }
+  /* Keep browser default cursor styles */
 }
 
 /* Utility for text outline */

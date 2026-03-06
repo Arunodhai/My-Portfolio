@@ -53,7 +53,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-lg md:text-xl leading-relaxed font-light text-ink/80">
-            I build modern, fast, and visually appealing websites for cafés, restaurants, and small businesses. Specializing in <span className="font-serif italic text-ink">restaurant websites</span> and data-driven web apps.
+            I design and build high-performance websites and SaaS products for startups, businesses, and modern brands. From landing pages to complex web apps, I focus on speed, clarity, and outcomes that support growth.
           </p>
           
           <a href="#projects" className="inline-flex items-center gap-2 mt-8 group hover-target">

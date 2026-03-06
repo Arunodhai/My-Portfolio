@@ -72,13 +72,13 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p>
-              I'm a web developer based in Kerala, India. I enjoy building modern, fast, and visually appealing web applications and websites.
+              I'm a web developer based in Kerala, India, focused on building websites that are clean, fast, and built for real business goals.
             </p>
             <p>
-              I specialize in creating restaurant websites, SaaS dashboards, and data-driven web applications. I focus on clean UI, performance, and practical solutions that businesses can actually use.
+              My core work includes business websites, SaaS products, dashboards, and data-driven web apps. I prioritize clear user experience, performance, and practical workflows teams can adopt quickly.
             </p>
             <p>
-              Outside of coding, I enjoy building digital products, exploring design ideas, and experimenting with SaaS projects.
+              Beyond client work, I explore product ideas, experiment with SaaS concepts, and refine interfaces that balance aesthetics with usability.
             </p>
           </motion.div>
 
@@ -94,7 +94,7 @@ export default function About() {
               <div className="flex justify-between items-start border-b border-ink/10 pb-4">
                 <div>
                   <h4 className="font-medium">Software Engineer</h4>
-                  <p className="text-sm text-ink/60 mt-1">Working on backend systems, automation, and data processing.</p>
+                  <p className="text-sm text-ink/60 mt-1">Building backend systems, automation pipelines, and data processing workflows.</p>
                 </div>
                 <span className="font-mono text-xs opacity-60">Current</span>
               </div>

@@ -15,7 +15,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          What's Next?
+          Let's Connect
         </motion.span>
         
         <motion.h2 
@@ -25,7 +25,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Have a <span className="italic text-paper/70">Project?</span>
+          Have a <span className="italic text-paper/70">Project in Mind?</span>
         </motion.h2>
         
         <motion.p 
@@ -35,7 +35,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Let's build something great together. I'm currently accepting new freelance clients.
+          I partner with founders and teams to build websites and web apps that are fast, clear, and ready to grow.
         </motion.p>
 
         <motion.a 
@@ -47,7 +47,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
         >
           <div className="flex flex-col items-center gap-2">
-            <span className="font-mono text-sm tracking-widest uppercase group-hover:text-paper transition-colors text-center">Hire<br/>Me</span>
+            <span className="font-mono text-sm tracking-widest uppercase group-hover:text-paper transition-colors text-center">Start a<br/>Project</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 group-hover:text-paper transition-all duration-300 mt-2" />
           </div>
           

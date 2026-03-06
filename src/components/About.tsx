@@ -12,20 +12,19 @@ export default function About() {
     <section id="about" className="py-24 px-6 md:px-12 lg:px-24 bg-paper relative">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         
-        <div className="lg:col-span-5 flex flex-col gap-12">
+        <div className="lg:col-span-5 lg:order-2 flex flex-col gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl"
+            className="relative aspect-[3/4] w-full max-w-md mx-auto lg:ml-auto overflow-hidden rounded-2xl"
           >
             <div className="absolute inset-0 bg-ink/10 mix-blend-overlay z-10" />
             <img 
-              src="https://picsum.photos/seed/developer/800/1000?grayscale" 
+              src="/me.jpg" 
               alt="Portrait" 
               className="w-full h-full object-cover filter contrast-125"
-              referrerPolicy="no-referrer"
             />
             {/* Decorative frame */}
             <div className="absolute inset-4 border border-paper/50 z-20 rounded-xl" />
@@ -53,7 +52,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        <div className="lg:col-span-7 flex flex-col justify-center">
+        <div className="lg:col-span-7 lg:order-1 flex flex-col justify-center">
           <motion.h2 
             className="text-4xl md:text-5xl font-serif mb-8"
             initial={{ opacity: 0, y: 20 }}

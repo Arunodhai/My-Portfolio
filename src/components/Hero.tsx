@@ -1,9 +1,18 @@
 import { motion } from 'motion/react';
 import { ArrowDownRight } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 import SplashCursor from './SplashCursor';
 
 export default function Hero() {
   const whatsappUrl = 'https://wa.me/919567641577';
+  const emailAddress = 'arunodhai007@gmail.com';
+
+  const contactIcons = [
+    { href: `mailto:${emailAddress}`, label: 'Email', icon: Mail },
+    { href: 'tel:+919567641577', label: 'Phone and WhatsApp', icon: Phone },
+    { href: 'https://www.linkedin.com/in/arunodhai-v/', label: 'LinkedIn', icon: Linkedin, external: true },
+    { href: 'https://github.com/Arunodhai', label: 'GitHub', icon: Github, external: true },
+  ];
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 overflow-hidden section-rule pt-24">
@@ -35,7 +44,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            Web Developer
+            Websites & SaaS
           </motion.h1>
         </div>
 
@@ -46,7 +55,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-lg md:text-xl leading-relaxed text-ink">
-            I design and build high-performance websites and SaaS products for startups, businesses, and modern brands. From landing pages to complex web apps, I focus on speed, clarity, and outcomes that support growth.
+            I design and build fast, modern websites and web applications that help businesses grow online.
           </p>
           
           <div className="flex flex-wrap items-center gap-3 mt-8">
@@ -54,20 +63,29 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-ink text-paper border-2 border-ink font-mono text-xs tracking-widest uppercase hover:bg-paper hover:text-ink transition-none hover-target"
             >
-              Hire Me
+              Start a Project
               <ArrowDownRight className="w-4 h-4" />
             </a>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-ink font-mono text-xs tracking-widest uppercase hover:bg-ink hover:text-paper transition-none hover-target"
-            >
-              WhatsApp
-              <ArrowDownRight className="w-4 h-4" />
-            </a>
-            <a href="#projects" className="inline-flex items-center gap-2 group hover-target ml-1 font-mono text-xs uppercase tracking-widest border-b-2 border-ink pb-1">
-              View Work
+            <div className="inline-flex items-center gap-2">
+              {contactIcons.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noreferrer' : undefined}
+                    aria-label={item.label}
+                    title={item.label}
+                    className="inline-flex items-center justify-center w-11 h-11 border-2 border-ink hover:bg-ink hover:text-paper transition-none hover-target"
+                  >
+                    <Icon size={18} strokeWidth={1.5} />
+                  </a>
+                );
+              })}
+            </div>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 group hover-target ml-1 font-mono text-xs uppercase tracking-widest border-b-2 border-ink pb-1">
+              Chat on WhatsApp
               <ArrowDownRight className="w-4 h-4" />
             </a>
           </div>

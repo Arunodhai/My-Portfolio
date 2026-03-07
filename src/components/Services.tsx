@@ -24,14 +24,27 @@ const services = [
 ];
 
 const processSteps = [
-  "Discover goals and users",
-  "Design clear user flows",
-  "Build and iterate fast",
-  "Optimize speed and SEO",
-  "Launch with confidence"
+  "Discovery - Understanding your business needs",
+  "Design - Creating clean and modern UI",
+  "Development - Building fast and scalable systems",
+  "Launch - Deploying and optimizing the product"
 ];
 
 export default function Services() {
+  const tech = {
+    frontend: ['Next.js', 'React', 'Tailwind CSS', 'JavaScript'],
+    backend: ['Node.js', 'REST APIs'],
+    tools: ['Git', 'Vercel', 'Supabase', 'Figma'],
+  };
+
+  const focus = [
+    'Fast websites',
+    'Clean modern design',
+    'Mobile-first development',
+    'SEO-friendly structure',
+    'Business-focused solutions',
+  ];
+
   return (
     <section id="services" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-paper text-ink section-rule">
       <div className="max-w-7xl mx-auto">
@@ -78,7 +91,7 @@ export default function Services() {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-serif mb-8">My Process</h3>
-          <div className="flex flex-col md:flex-row justify-between gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {processSteps.map((step, index) => (
               <div key={index} className="flex-1 relative group">
                 <div className="font-mono text-xs text-muted-foreground mb-2">0{index + 1}</div>
@@ -90,6 +103,35 @@ export default function Services() {
             ))}
           </div>
         </motion.div>
+
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-3xl font-serif mb-6">Technologies</h3>
+            <div className="space-y-5">
+              <div>
+                <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-2">Frontend</p>
+                <p>{tech.frontend.join(' • ')}</p>
+              </div>
+              <div>
+                <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-2">Backend</p>
+                <p>{tech.backend.join(' • ')}</p>
+              </div>
+              <div>
+                <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-2">Tools</p>
+                <p>{tech.tools.join(' • ')}</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-serif mb-6">What I Focus On</h3>
+            <div className="space-y-3">
+              {focus.map((item) => (
+                <p key={item} className="border-b-2 border-ink pb-3">✔ {item}</p>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

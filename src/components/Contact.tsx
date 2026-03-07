@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, Phone, Linkedin, Github } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 
 export default function Contact() {
@@ -147,6 +147,29 @@ export default function Contact() {
             <p className="text-sm text-paper/70">Something went wrong. Please try WhatsApp directly.</p>
           )}
         </motion.form>
+
+        <div className="w-full max-w-3xl mt-10 border-t-2 border-paper pt-6 text-left">
+          <p className="font-mono text-xs uppercase tracking-widest text-paper/70 mb-4">Contact Details</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <a href={`mailto:${emailAddress}`} className="inline-flex items-center gap-3 border-b border-paper/20 pb-2 hover:text-paper hover:border-paper transition-none">
+              <Mail size={18} strokeWidth={1.5} />
+              <span>Email: {emailAddress}</span>
+            </a>
+            <a href="tel:+919567641577" className="inline-flex items-center gap-3 border-b border-paper/20 pb-2 hover:text-paper hover:border-paper transition-none">
+              <Phone size={18} strokeWidth={1.5} />
+              <span>Phone / WhatsApp: {phoneNumber}</span>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 border-b border-paper/20 pb-2 hover:text-paper hover:border-paper transition-none">
+              <Linkedin size={18} strokeWidth={1.5} />
+              <span>LinkedIn: View Profile</span>
+            </a>
+            <a href="https://github.com/Arunodhai" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 border-b border-paper/20 pb-2 hover:text-paper hover:border-paper transition-none">
+              <Github size={18} strokeWidth={1.5} />
+              <span>GitHub: github.com/Arunodhai</span>
+            </a>
+          </div>
+        </div>
+
       </div>
 
       <div className="max-w-7xl mx-auto mt-32 pt-8 border-t border-paper/10 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">

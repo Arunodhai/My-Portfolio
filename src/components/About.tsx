@@ -30,15 +30,15 @@ export default function About() {
           >
             <div className="py-6 border-r-2 border-ink">
               <div className="text-3xl font-serif">5+</div>
-              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-1">Projects Built</div>
+              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-1">Projects Completed</div>
             </div>
             <div className="py-6 border-r-2 border-ink">
               <div className="text-3xl font-serif">10+</div>
-              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-1">Tech Used</div>
+              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-1">Technologies Used</div>
             </div>
             <div className="py-6">
               <div className="text-3xl font-serif">50k+</div>
-              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-1">Lines of Code</div>
+              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-1">Lines of Code Written</div>
             </div>
           </motion.div>
         </div>
@@ -62,13 +62,10 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p>
-              I'm a web developer based in Kerala, India, focused on building websites that are clean, fast, and built for real business goals.
+              Hi, I'm Arunodhai, a web developer based in Kerala, India. I build fast, modern websites and web applications that help businesses establish a strong online presence.
             </p>
             <p>
-              My core work includes business websites, SaaS products, dashboards, and data-driven web apps. I prioritize clear user experience, performance, and practical workflows teams can adopt quickly.
-            </p>
-            <p>
-              Beyond client work, I explore product ideas, experiment with SaaS concepts, and refine interfaces that balance aesthetics with usability.
+              My work includes business websites, SaaS dashboards, and custom web systems designed for performance and usability.
             </p>
           </motion.div>
 

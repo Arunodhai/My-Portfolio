@@ -21,6 +21,8 @@ interface SplashCursorProps {
   COLOR_UPDATE_SPEED?: number;
   BACK_COLOR?: ColorRGB;
   TRANSPARENT?: boolean;
+  className?: string;
+  fixed?: boolean;
 }
 
 interface Pointer {
@@ -65,7 +67,9 @@ export default function SplashCursor({
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true
+  TRANSPARENT = true,
+  className = "",
+  fixed = true
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -1522,7 +1526,7 @@ export default function SplashCursor({
   ]);
 
   return (
-    <div className="fixed inset-0 z-[1] pointer-events-none w-full h-full">
+    <div className={`${fixed ? "fixed" : "absolute"} inset-0 z-[1] pointer-events-none w-full h-full ${className}`}>
       <canvas ref={canvasRef} className="w-full h-full block"></canvas>
     </div>
   );

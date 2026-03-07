@@ -41,9 +41,15 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-ink text-paper relative overflow-hidden">
-      <div className="absolute -top-56 left-0 w-[38rem] h-[38rem] rounded-full bg-paper/10 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-56 right-0 w-[44rem] h-[44rem] rounded-full bg-paper/10 blur-3xl pointer-events-none" />
+    <section
+      id="projects"
+      className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-muted text-ink relative overflow-hidden section-rule"
+      style={{
+        backgroundImage:
+          'linear-gradient(#00000008 1px, transparent 1px), linear-gradient(90deg, #00000008 1px, transparent 1px)',
+        backgroundSize: '40px 40px',
+      }}
+    >
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -51,13 +57,13 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14 md:mb-18"
+          className="mb-16 md:mb-20"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-paper/45 mb-5">Featured Projects</p>
-          <h2 className="text-4xl md:text-6xl font-serif tracking-tight">
-            Selected <span className="italic text-paper/70">Works</span>
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground mb-5">Featured Projects</p>
+          <h2 className="text-5xl md:text-7xl font-serif tracking-tighter leading-none">
+            Selected <span className="italic text-muted-foreground">Works</span>
           </h2>
-          <p className="mt-4 text-paper/70 text-sm md:text-base max-w-3xl">
+          <p className="mt-4 text-muted-foreground text-sm md:text-base max-w-3xl">
             Real projects I have built across healthcare, restaurant websites, SaaS systems, and analytics dashboards.
           </p>
         </motion.div>
@@ -70,26 +76,24 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-120px' }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group relative aspect-square overflow-hidden rounded-3xl border border-paper/20 bg-gradient-to-b from-paper/10 to-paper/[0.04] hover:border-paper/45 transition-all duration-500"
+              className="group relative aspect-square overflow-hidden border-2 border-ink bg-paper hover:bg-ink hover:text-paper transition-colors duration-100"
             >
-              <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-paper/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative z-10 p-5 md:p-6 h-full flex flex-col">
-                <div className="relative rounded-2xl overflow-hidden border border-paper/20 bg-ink/60 mb-5 md:mb-6 aspect-square">
-                  <div className="absolute inset-0 bg-gradient-to-b from-paper/0 via-paper/0 to-ink/35 pointer-events-none" />
+                <div className="relative overflow-hidden border-2 border-ink mb-5 md:mb-6 aspect-square group-hover:border-paper bg-muted">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain p-3 md:p-4 group-hover:scale-[1.02] transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
                 <div className="flex items-start justify-between gap-4 mt-auto">
                   <div>
-                    <p className="font-mono text-[11px] md:text-xs tracking-[0.18em] uppercase text-paper/55 mb-2">
+                    <p className="font-mono text-[11px] md:text-xs tracking-[0.18em] uppercase text-muted-foreground mb-2 group-hover:text-paper/70">
                       {project.id} • {project.category}
                     </p>
-                    <h3 className="text-lg md:text-2xl font-sans font-semibold tracking-tight leading-tight max-w-2xl">
+                    <h3 className="text-lg md:text-2xl font-serif tracking-tight leading-tight max-w-2xl">
                       {project.title}
                     </h3>
                   </div>
@@ -97,14 +101,14 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-[11px] md:text-xs font-mono uppercase tracking-[0.16em] text-paper/85 border border-paper/35 rounded-full px-3 py-2 hover:border-paper/70 hover:text-paper hover:bg-paper/10 transition-all hover-target"
+                    className="inline-flex items-center gap-2 text-[11px] md:text-xs font-mono uppercase tracking-[0.16em] border-2 border-ink px-3 py-2 group-hover:border-paper group-hover:text-paper hover:bg-ink hover:text-paper transition-none hover-target"
                   >
                     Live
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
 
-                <div className="mt-5 h-px bg-gradient-to-r from-paper/35 to-transparent" />
+                <div className="mt-5 h-[2px] bg-ink/35 group-hover:bg-paper/35" />
               </div>
             </motion.article>
           ))}

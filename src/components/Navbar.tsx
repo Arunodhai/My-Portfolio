@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,16 +14,16 @@ export default function Navbar() {
 
   return (
     <motion.nav 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'py-4 bg-paper/80 backdrop-blur-md shadow-sm' : 'py-8 bg-transparent'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-100 ${
+        scrolled ? 'py-4 bg-paper border-b-2 border-ink' : 'py-6 bg-paper border-b border-border-light'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
-        <a href="#" className="text-2xl font-serif font-bold tracking-tighter hover-target">
-          A<span className="text-ink/50">.</span>
+        <a href="#" className="text-3xl font-serif font-bold tracking-tighter hover-target">
+          A.
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -31,10 +31,9 @@ export default function Navbar() {
             <a 
               key={item} 
               href={`#${item === 'Work' ? 'projects' : item.toLowerCase()}`}
-              className="font-mono text-xs tracking-widest uppercase hover:text-ink/50 transition-colors hover-target relative group"
+              className="font-mono text-xs tracking-widest uppercase hover-target relative group border-b border-transparent hover:border-ink transition-none"
             >
               {item}
-              <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-ink transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>

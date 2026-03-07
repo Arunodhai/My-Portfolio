@@ -33,7 +33,7 @@ const processSteps = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 px-6 md:px-12 lg:px-24 bg-paper text-ink border-t border-ink/10">
+    <section id="services" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-paper text-ink section-rule">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="mb-16 md:mb-24"
@@ -42,10 +42,10 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-6xl font-serif tracking-tight mb-6">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-tighter mb-6 leading-none">
             My <span className="italic text-ink/70">Specialization</span>
           </h2>
-          <p className="text-xl font-light text-ink/80 max-w-2xl">
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
             I help teams build websites and SaaS products across industries, with a strong focus on performance, usability, and measurable business impact.
           </p>
         </motion.div>
@@ -54,17 +54,17 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div 
               key={service.id}
-              className="group"
+              className="group border-2 border-ink p-8 transition-none hover:bg-ink hover:text-paper"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="flex items-baseline gap-4 mb-6 border-b border-ink/10 pb-4">
-                <span className="font-mono text-sm text-ink/50">{service.id}</span>
-                <h3 className="text-2xl md:text-3xl font-sans font-medium tracking-tight group-hover:translate-x-2 transition-transform duration-300">{service.title}</h3>
+              <div className="flex items-baseline gap-4 mb-6 border-b-2 border-ink pb-4 group-hover:border-paper">
+                <span className="font-mono text-sm text-muted-foreground group-hover:text-paper/70">{service.id}</span>
+                <h3 className="text-2xl md:text-3xl font-serif tracking-tight">{service.title}</h3>
               </div>
-              <p className="text-ink/70 font-light leading-relaxed md:ml-10">
+              <p className="leading-relaxed md:ml-10 text-muted-foreground group-hover:text-paper">
                 {service.description}
               </p>
             </motion.div>
@@ -77,15 +77,15 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-serif mb-8">My Process</h3>
+          <h3 className="text-3xl font-serif mb-8">My Process</h3>
           <div className="flex flex-col md:flex-row justify-between gap-4">
             {processSteps.map((step, index) => (
               <div key={index} className="flex-1 relative group">
-                <div className="font-mono text-xs text-ink/40 mb-2">0{index + 1}</div>
-                <div className="h-[1px] w-full bg-ink/10 mb-4 relative">
-                  <div className="absolute top-0 left-0 h-full bg-ink w-0 group-hover:w-full transition-all duration-500" />
+                <div className="font-mono text-xs text-muted-foreground mb-2">0{index + 1}</div>
+                <div className="h-[2px] w-full bg-border-light mb-4 relative">
+                  <div className="absolute top-0 left-0 h-full bg-ink w-0 group-hover:w-full transition-all duration-100" />
                 </div>
-                <p className="text-sm font-medium">{step}</p>
+                <p className="text-sm">{step}</p>
               </div>
             ))}
           </div>

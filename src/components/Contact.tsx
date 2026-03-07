@@ -39,13 +39,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-12 lg:px-24 bg-ink text-paper relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-paper/5 rounded-full blur-[100px] pointer-events-none" />
+    <section
+      id="contact"
+      className="py-32 md:py-40 px-6 md:px-12 lg:px-24 bg-ink text-paper relative overflow-hidden section-rule border-paper"
+      style={{
+        backgroundImage: 'radial-gradient(circle at top center, rgba(255,255,255,0.14), rgba(255,255,255,0.02) 45%, transparent 70%)',
+      }}
+    >
 
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
         <motion.span 
-          className="font-mono text-sm tracking-widest uppercase text-paper/50 mb-6 block"
+          className="font-mono text-sm tracking-widest uppercase text-paper/80 mb-6 block"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -55,7 +59,7 @@ export default function Contact() {
         </motion.span>
         
         <motion.h2 
-          className="text-5xl md:text-7xl lg:text-9xl font-serif tracking-tighter mb-12"
+          className="text-5xl md:text-7xl lg:text-9xl font-serif tracking-tighter mb-12 text-paper"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -65,7 +69,7 @@ export default function Contact() {
         </motion.h2>
         
         <motion.p 
-          className="max-w-xl text-lg md:text-xl text-paper/70 font-light mb-16"
+          className="max-w-2xl text-lg md:text-xl text-paper/90 mb-16 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -78,23 +82,21 @@ export default function Contact() {
           href={whatsappUrl}
           target="_blank"
           rel="noreferrer"
-          className="group relative inline-flex items-center justify-center w-48 h-48 rounded-full border border-paper/30 hover:border-paper bg-transparent hover:bg-paper/5 transition-all duration-500 hover-target"
+          className="group relative inline-flex items-center justify-center w-56 h-16 border-2 border-paper hover:border-paper bg-transparent hover:bg-paper hover:text-ink transition-none hover-target"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
         >
-          <div className="flex flex-col items-center gap-2">
-            <span className="font-mono text-sm tracking-widest uppercase group-hover:text-paper transition-colors text-center">Start a<br/>Project</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 group-hover:text-paper transition-all duration-300 mt-2" />
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-sm tracking-widest uppercase text-center">Start a Project</span>
+            <ArrowRight className="w-5 h-5" />
           </div>
-          
-          {/* Spinning text ring could go here for extra wow factor */}
         </motion.a>
 
         <motion.form
           onSubmit={handleSubmit}
-          className="w-full max-w-2xl mt-16 grid grid-cols-1 gap-4 text-left"
+          className="w-full max-w-3xl mt-16 grid grid-cols-1 gap-4 text-left border-2 border-paper p-6 md:p-8 bg-ink"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -110,14 +112,14 @@ export default function Contact() {
               name="name"
               placeholder="Your Name"
               required
-              className="w-full bg-paper/5 border border-paper/20 rounded-xl px-4 py-3 text-paper placeholder:text-paper/45 focus:outline-none focus:border-paper/50"
+              className="w-full bg-transparent border-b-2 border-paper px-0 py-3 text-paper placeholder:text-paper/80 italic focus:outline-none focus:border-b-[4px]"
             />
             <input
               name="email"
               type="email"
               placeholder="Your Email"
               required
-              className="w-full bg-paper/5 border border-paper/20 rounded-xl px-4 py-3 text-paper placeholder:text-paper/45 focus:outline-none focus:border-paper/50"
+              className="w-full bg-transparent border-b-2 border-paper px-0 py-3 text-paper placeholder:text-paper/80 italic focus:outline-none focus:border-b-[4px]"
             />
           </div>
 
@@ -126,13 +128,13 @@ export default function Contact() {
             placeholder="Tell me about your project..."
             required
             rows={5}
-            className="w-full bg-paper/5 border border-paper/20 rounded-xl px-4 py-3 text-paper placeholder:text-paper/45 focus:outline-none focus:border-paper/50 resize-none"
+            className="w-full bg-transparent border-b-2 border-paper px-0 py-3 text-paper placeholder:text-paper/80 italic focus:outline-none focus:border-b-[4px] resize-none"
           />
 
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-paper text-ink font-mono text-xs tracking-widest uppercase hover:bg-paper/90 transition-colors disabled:opacity-60 hover-target"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-paper bg-paper text-ink font-mono text-xs tracking-widest uppercase hover:bg-ink hover:text-paper transition-none disabled:opacity-60 hover-target"
           >
             {status === 'sending' ? 'Sending...' : 'Send Message'}
             <ArrowRight className="w-4 h-4" />

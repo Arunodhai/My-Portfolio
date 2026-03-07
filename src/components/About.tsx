@@ -1,13 +1,6 @@
 import { motion } from 'motion/react';
 
 export default function About() {
-  const skills = {
-    Frontend: ["Next.js", "React", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
-    Backend: ["Node.js", "REST APIs"],
-    Tools: ["Git", "Vercel", "Supabase", "Chrome Extension APIs"],
-    Other: ["Data visualization", "SaaS product design", "UI/UX design"]
-  };
-
   return (
     <section id="about" className="py-24 px-6 md:px-12 lg:px-24 bg-paper relative">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
@@ -93,37 +86,25 @@ export default function About() {
               <div className="flex justify-between items-start border-b border-ink/10 pb-4">
                 <div>
                   <h4 className="font-medium">Software Engineer</h4>
-                  <p className="text-sm text-ink/60 mt-1">Building backend systems, automation pipelines, and data processing workflows.</p>
+                  <p className="text-sm text-ink/60 mt-1">Building webapps, dashboards, extensions, backend systems, automation pipelines, and data processing workflows.</p>
                 </div>
                 <span className="font-mono text-xs opacity-60">Current</span>
               </div>
               <div className="flex justify-between items-start border-b border-ink/10 pb-4">
                 <div>
                   <h4 className="font-medium">MCA Graduate</h4>
-                  <p className="text-sm text-ink/60 mt-1">Master of Computer Applications</p>
+                  <p className="text-sm text-ink/60 mt-1">Master of Computer Applications • 3rd Rank Holder</p>
+                </div>
+              </div>
+              <div className="flex justify-between items-start border-b border-ink/10 pb-4">
+                <div>
+                  <h4 className="font-medium">BCA Graduate</h4>
+                  <p className="text-sm text-ink/60 mt-1">Bachelor of Computer Applications • 1st Rank Holder (Gold Medal)</p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <h3 className="font-mono text-sm tracking-widest uppercase text-ink/60 mb-6">Technologies</h3>
-            <div className="flex flex-wrap gap-3">
-              {[...skills.Frontend, ...skills.Backend, ...skills.Tools].map((skill, index) => (
-                <span 
-                  key={index}
-                  className="px-4 py-2 border border-ink/10 rounded-full text-sm font-medium hover:bg-ink hover:text-paper transition-colors duration-300 cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.div>
         </div>
 
       </div>

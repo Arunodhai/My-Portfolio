@@ -2,6 +2,8 @@ import { motion } from 'motion/react';
 import { ArrowDownRight } from 'lucide-react';
 
 export default function Hero() {
+  const whatsappUrl = 'https://wa.me/919567641577';
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background subtle elements */}
@@ -56,10 +58,28 @@ export default function Hero() {
             I design and build high-performance websites and SaaS products for startups, businesses, and modern brands. From landing pages to complex web apps, I focus on speed, clarity, and outcomes that support growth.
           </p>
           
-          <a href="#projects" className="inline-flex items-center gap-2 mt-8 group hover-target">
-            <span className="font-mono text-sm tracking-widest uppercase border-b border-ink pb-1 group-hover:border-ink/50 group-hover:text-ink/50 transition-colors">View Work</span>
-            <ArrowDownRight className="w-4 h-4 group-hover:text-ink/50 transition-colors group-hover:translate-x-1 group-hover:translate-y-1 duration-300" />
-          </a>
+          <div className="flex flex-wrap items-center gap-3 mt-8">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-ink text-paper rounded-full font-mono text-xs tracking-widest uppercase hover:bg-ink/85 transition-colors hover-target"
+            >
+              Hire Me
+              <ArrowDownRight className="w-4 h-4" />
+            </a>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-ink/20 rounded-full font-mono text-xs tracking-widest uppercase hover:border-ink/45 transition-colors hover-target"
+            >
+              WhatsApp
+              <ArrowDownRight className="w-4 h-4" />
+            </a>
+            <a href="#projects" className="inline-flex items-center gap-2 group hover-target ml-1">
+              <span className="font-mono text-sm tracking-widest uppercase border-b border-ink pb-1 group-hover:border-ink/50 group-hover:text-ink/50 transition-colors">View Work</span>
+              <ArrowDownRight className="w-4 h-4 group-hover:text-ink/50 transition-colors group-hover:translate-x-1 group-hover:translate-y-1 duration-300" />
+            </a>
+          </div>
         </motion.div>
       </div>
 
